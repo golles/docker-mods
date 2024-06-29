@@ -7,7 +7,7 @@ mkdir -p /config/log/ddns
 
 if [[ ! -f /etc/crontabs/root ]]; then
     if ! grep -q "/app/cloudflare.sh" /etc/crontabs/root; then
-        echo "*       *       *       *       *       /app/cloudflare.sh" >> /etc/crontabs/root
+        echo "*       *       *       *       *       /app/cloudflare.sh >> /config/log/ddns/cloudflare.log 2>&1" >> /etc/crontabs/root
     fi
 else
     echo "Couldn't install cronjob, please install linuxserver/mods:universal-cron mod manually"
