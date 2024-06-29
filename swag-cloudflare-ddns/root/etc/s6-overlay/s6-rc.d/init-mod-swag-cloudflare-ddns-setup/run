@@ -1,0 +1,20 @@
+#!/usr/bin/with-contenv bash
+
+echo "Applying the CloudFlare DDNS mod..."
+
+mkdir -p /config/ddns
+mkdir -p /config/log/ddns
+
+if [[ ! -f /etc/crontabs/root ]]; then
+    if ! grep -q "/app/cloudflare.sh" /etc/crontabs/root; then
+        echo "*       *       *       *       *       /app/cloudflare.sh" >> /etc/crontabs/root
+    fi
+else
+    echo "Couldn't install cronjob, please install linuxserver/mods:universal-cron mod manually"
+fi
+
+if [[ ! -f /config/ddns/cloudflare.ini ]]; then
+    cp /defaults/cloudflare.ini /config/ddns/cloudflare.ini
+fi
+
+echo "Applied the CloudFlare DDNS mod"

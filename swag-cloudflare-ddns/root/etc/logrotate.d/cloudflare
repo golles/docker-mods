@@ -1,0 +1,11 @@
+/config/log/ddns/cloudflare.log {
+    weekly
+    rotate 7
+    compress
+    delaycompress
+    nodateext
+    missingok
+    notifempty
+    sharedscripts
+    su abc abc
+}
