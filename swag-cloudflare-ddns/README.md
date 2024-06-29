@@ -2,7 +2,7 @@
 
 This mod gives SWAG the ability to update your DNS configuration on CloudFlare making your swag act as a DDNS server.
 
-In SWAG docker arguments, set an environment variable `DOCKER_MODS=golles/c:swag-cloudflare-ddns`
+In SWAG docker arguments, set an environment variable `DOCKER_MODS=golles/docker-mods:swag-cloudflare-ddns`
 
 If adding multiple mods, enter them in an array separated by `|`, such as `DOCKER_MODS=linuxserver/mods:universal-cron|golles/docker-mods:swag-cloudflare-ddns`
 
